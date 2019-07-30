@@ -1,4 +1,4 @@
-package coreJavaAssignment;
+package coreJavaAssignment; //Name of the package
 
 public class Problem1 {
 
@@ -13,8 +13,8 @@ public class Problem1 {
 				System.out.print("* ");				
 			}
 			System.out.println(" ");
-		}
+		} //end for loop
 
 	} //end main
 
-} //end class
+} //end Problem1
