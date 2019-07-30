@@ -12,9 +12,9 @@ public class Problem1 {
 			{
 				System.out.print("* ");				
 			}
-			System.out.println("");
+			System.out.println(" ");
 		}
 
-	}
+	} //end main
 
 } //end class
