@@ -1,15 +1,15 @@
-package coreJavaAssignment; //Name of the package
+package coreJavaAssignment;
 
-public class Problem2 {
+public class Problem5 {
 
 	public static void main(String[] args) {
 		
-		
+		//The number of row is 4 as the array starts from index 0
 		int numberOfRows = 5; 
 		
-		for (int a = 1; a <= numberOfRows; a++)
+		for (int a = numberOfRows; a >= 1; --a)
 		{
-			for (int b = 1; b <= a; b++)
+			for (int b = 1; b <= a; ++b)
 			{
 				System.out.print(b + " ");				
 			}
@@ -17,4 +17,4 @@ public class Problem2 {
 		} //end for loop
 	} //end main
 
-} //end Problem2
+	}
