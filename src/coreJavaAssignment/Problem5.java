@@ -4,17 +4,20 @@ public class Problem5 {
 
 	public static void main(String[] args) {
 		
-		//The number of row is 4 as the array starts from index 0
-		int numberOfRows = 5; 
+		int i, j, k = 1;
 		
-		for (int a = numberOfRows; a >= 1; --a)
+		for (i = 0;i < 5; i++)
 		{
-			for (int b = 1; b <= a; ++b)
+			System.out.println("");
+			
+			for (j = 0; j <= i; j++)
 			{
-				System.out.print(b + " ");				
+				System.out.print("* ");	
 			}
-			System.out.println();
+			k = k + 2;
+			System.out.println(" ");
 		} //end for loop
+
 	} //end main
 
 	}
