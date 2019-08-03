@@ -13,7 +13,7 @@ public class Problem5 //Name of the class
 			
 			for (j = 0; j <= i; j++)
 			{
-				System.out.print("* ");	
+				System.out.print(j + " ");	
 			}
 			k = k + 2;
 			System.out.println(" ");

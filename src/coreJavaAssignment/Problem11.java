@@ -38,7 +38,7 @@ public class Problem11 {
 		
 		for (int m = 0; m < l; m++) 
 		{
-			System.out.println(arr[m]);
+			System.out.print(arr[m] + " ");
 		}
 
 	}
