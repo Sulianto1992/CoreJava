@@ -3,6 +3,7 @@ package service; //Name of the package
 import java.util.ArrayList;
 
 import dao.ATMDAO;
+import dao.ATMDAOImpl;
 import pojo.User;
 
 public class ATMServiceImpl implements ATMService //Name of the class
@@ -12,11 +13,29 @@ public class ATMServiceImpl implements ATMService //Name of the class
 	@Override
 	public void registerUser(ArrayList<User> refUserList)
 	{
-		refATMDAO = new ATMServiceImpl();
+		refATMDAO = new ATMDAOImpl();
 		if(refATMDAO.registerValidate(refUserList) == true)
 		{
 			
 		}
+	}
+
+	@Override
+	public void loginService(ArrayList<User> refUserList) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void forgetPassword(ArrayList<User> refUserList) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void logout() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 } //end ATMServiceImpl

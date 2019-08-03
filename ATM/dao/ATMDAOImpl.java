@@ -10,7 +10,7 @@ public class ATMDAOImpl implements ATMDAO //Name of the class
 	@Override
 	public boolean registerValidate(ArrayList<User> refUserList)
 	{
-		
+		return false;
 	}
 
 	@Override
