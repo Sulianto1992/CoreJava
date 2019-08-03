@@ -2,24 +2,6 @@ package coreJavaAssignment;
 
 public class Problem10 {
 	
-	/*
-	private static void checkCommonElements(int[] firstArray, int[] secondArray, int[] thirdArray) {
-		
-		int firstArrayLength = firstArray.length;
-		int secondArrayLength = firstArray.length;
-		int thirdArrayLength = firstArray.length;
-		
-		int firstArrayCount = 0; 
-		int secondArrayCount = 0; 
-		int thirdArrayCount = 0; 
-		
-		while ( (firstArrayCount < firstArrayLength) && (secondArrayCount < secondArrayLength) && 
-				(thirdArrayCount < thirdArrayLength))
-		{
-			
-		}
-	}
-	*/
 	
 	public static void main(String[] args) {
 		
@@ -36,24 +18,22 @@ public class Problem10 {
 			{
 				break;
 			}
-				if (array1[index1] == array2[index2])
-				{
-					System.out.println(array1[index1]);
-					System.out.println(" ");
-					index1 += 1;
-				}
-				else if (array1[index1] < array2[index2]) 
-				{
-					index1 += 1;
-				}
-				else
-				{
-					index2 += 1;
-				}
-		  }
+			if (array1[index1] == array2[index2])
+			{
+				System.out.println(array1[index1]);
+				System.out.println(" ");
+				index1 += 1;
+			}
+			else if (array1[index1] < array2[index2]) 
+			{
+				index1 += 1;
+			}
+			else
+			{
+				index2 += 1;
 		}
-		
-		//checkCommonElements(array1, array2, array3);
+	  }
 	}
+}
 
 	
