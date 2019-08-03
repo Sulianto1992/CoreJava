@@ -38,9 +38,10 @@ public class MainController //Name of the class
 			System.out.println("4. Logout (exit)\n");
 			
 			//Prompt for user input
-			System.out.println("Enter Your Choice : ");
+			System.out.print("Enter Your Choice : ");
 			Scanner sc = new Scanner(System.in);
 			choice = sc.nextInt();
+			System.out.println(); 
 			
 			//Create object of ATMServiceImpl class and refer to the interface
 			refATMService = new ATMServiceImpl();
@@ -66,4 +67,5 @@ public class MainController //Name of the class
 			
 		} while (choice != 4);
 	
+    } //end mainMenu
 } //end MainController

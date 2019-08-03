@@ -33,9 +33,9 @@ public class ATMServiceImpl implements ATMService //Name of the class
 	}
 
 	@Override
-	public void logout() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void logout() 
+	{
+		System.out.println("Logout Successfully!!!");
+	} //end logout method
 	
 } //end ATMServiceImpl
