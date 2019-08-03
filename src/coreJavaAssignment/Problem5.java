@@ -1,6 +1,7 @@
-package coreJavaAssignment;
+package coreJavaAssignment; //Name of the package
 
-public class Problem5 {
+public class Problem5 //Name of the class
+{
 
 	public static void main(String[] args) {
 		
