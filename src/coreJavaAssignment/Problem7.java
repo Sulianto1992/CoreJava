@@ -4,31 +4,46 @@ public class Problem7 {
 
 	public static void main(String[] args) {
 		
-		int numberOfRows = 5;
+		//Variable Declaration
+		int count = 1;
+		int temp = 0;
+		int temp2 = 0;
 		
-		
-		for (int i = 1; i <= numberOfRows; i++)
+		//For loop
+		for (int i = 1; i <= 5; i++)
 		{
-			for (int j = i; j <= numberOfRows; j++)
+			for (int j = 1; j <= i; j++) 
 			{
-				System.out.print(j + " ");
-				
-				if (i == 1)
+				if ((j == 1) && (i == 1))
 				{
-					break;
+					System.out.print(i + " ");
+					count+=2;
 				}
-			}
+				else if (j < i)
+				{
+					if (j == 1)
+					{
+						temp = i;
+						System.out.print(temp + " ");
+						temp2 = temp + 1;
+					}
+					else
+					{
+						System.out.print(temp2 + " ");
+						temp2++;;
+					} //end if
+				} //end else if
+				else if (j == i)
+				{
+					for (int l = count; l >= i; l--)
+					{
+						System.out.print(l + " ");
+					} //end for
+					count+=2;
+				} //end if else
 			
-			/*
-			for (int k = numberOfRows - 1 ; k >= i; k--)
-			{
-				System.out.print(k + " ");
-			}
-			System.out.println();
-			*/
-			System.out.println();
-		}
-
-	}
-
-}
+			} //end for
+			System.out.println(); //Go to the next line 
+		} //end for
+	} //end main
+} //end Problem 7
