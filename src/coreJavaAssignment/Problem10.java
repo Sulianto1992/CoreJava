@@ -1,11 +1,9 @@
 package coreJavaAssignment; //Name of the package
 
-public class Problem10 
+public class Problem10 //Name of the class
 {
-	
-	public static void main(String[] args) 
+	public static void main(String[] args) //Start of the program
 	{
-		
 		//Initialize array variables
 		int[] array1 = {1, 2, 5, 8, 9, 11};
 		int[] array2 = {5, 8, 11, 12, 21, 27};
@@ -51,6 +49,7 @@ public class Problem10
 			{
 				index3 += 1; //Increment index of the third array by 1
 			} //end if else
+			
 	     } //end while
 	 } //end main
 } //end Problem 10
