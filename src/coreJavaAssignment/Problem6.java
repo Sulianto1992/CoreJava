@@ -4,7 +4,6 @@ public class Problem6 //Name of the class
 {
     public static void main(String[] args) //Start of the program
     {
-	
     	//Execute this statement as long as it is true
     	for (int i = 0; i <= 4; i++)
 		{

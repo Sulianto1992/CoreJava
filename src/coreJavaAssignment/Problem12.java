@@ -12,6 +12,9 @@ public class Problem12 //Name of the class
 	   int smallest = array[0];
 	   int secondSmallest = array[0];
 	   
+	   //Display the elements of the array
+	   System.out.println("Array: 1, 4, 5, 7, 9");
+	   
 	   //Execute this statement as long as it is true
 	   for (int i = 0; i < array.length; i++)
 	   {

@@ -9,6 +9,9 @@ public class Problem7 //Name of the class
 		int temp = 0;
 		int temp2 = 0;
 		
+		//Add blank space between stars for each line 
+		System.out.println(" "); 
+		
 		//Execute this statement as long as it is true
 		for (int i = 1; i <= 5; i++)
 		{

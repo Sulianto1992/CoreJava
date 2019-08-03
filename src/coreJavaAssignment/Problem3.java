@@ -8,13 +8,16 @@ public class Problem3 //Name of the class
 		int numberOfRows = 4; 
 		int alphabet = 65;
 		
+		//Add space before the start of the number pattern
+		System.out.println();
+		
 		//Execute this statement as long as it is true
 		for (int a = 0; a <= numberOfRows; a++)
 		{
 			for (int b = 0; b <= a; b++)
 			{
 				System.out.print(((char) alphabet + " ")); //Display the alphabet in the alphabet pattern		
-			}
+			} //end for
 			
 			alphabet++; //Increment to the next alphabet
 			System.out.println();

@@ -4,7 +4,6 @@ public class Problem5 //Name of the class
 {
 	public static void main(String[] args) //Start of the program
 	{
-		
 		//Variable declaration
 		int i, j;
 		int numLine = 5;

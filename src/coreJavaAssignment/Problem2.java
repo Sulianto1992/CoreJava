@@ -7,6 +7,9 @@ public class Problem2 //Name of the class
 		//Variable declaration
 		int numberOfRows = 5; 
 		
+		//Add space before the start of the number pattern
+		System.out.println();
+		
 		//Execute this statement as long as it is true
 		for (int a = 1; a <= numberOfRows; a++)
 		{

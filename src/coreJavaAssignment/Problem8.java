@@ -7,6 +7,10 @@ public class Problem8 //Name of the class
 		//Variable Declaration
 		int a, b;
 		
+		//Add blank space between stars for each line 
+		//Add blank space between stars for each line 
+		System.out.println(); 
+		
 		//Execute this statement as long as it is true
 		for (a = 4; a >= 0; a--)
 		{

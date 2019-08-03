@@ -8,6 +8,9 @@ public class Problem13 //Name of the class
 		int[] arr = {20, 20, 30, 40, 50, 50, 50};
 	    int arrayLength = arr.length;
 	    
+	    //Display the length of the array before removing duplicates
+	    System.out.println("Length of the array before removing duplicates: " + arrayLength); 
+	    
 	    //Execute this statement as long as it is true
 	    for (int a = 0; a < arrayLength; a++)
 	    {
@@ -22,8 +25,8 @@ public class Problem13 //Name of the class
 	    	} //end for
 	    } //end for 
 	    
-	    //Display the length of the array
-	    System.out.println("The length of the array is " + arrayLength);
+	  //Display the length of the array before removing duplicates
+	  System.out.println("Length of the array after removing duplicates: " + arrayLength); 
 	    
 	} //end main
 } //end Problem13
