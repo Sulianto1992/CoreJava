@@ -1,5 +1,6 @@
-package service;
+package service; //Name of the package
 
-public interface ATMService {
+public interface ATMService //Name of the interface
+{
 
-}
+} //end ATMService
