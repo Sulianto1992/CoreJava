@@ -2,23 +2,25 @@ package coreJavaAssignment; //Name of the package
 
 public class Problem5 //Name of the class
 {
-
-	public static void main(String[] args) {
+	public static void main(String[] args) //Start of the program
+	{
 		
-		int i, j, k = 1;
+		//Variable declaration
+		int i, j;
+		int numLine = 5;
 		
-		for (i = 0;i < 5; i++)
+		//Execute this statement as long as this is true
+		for (i = 1;i <= 5; i++)
 		{
-			System.out.println("");
+			System.out.println(); //Move to the next line
 			
-			for (j = 0; j <= i; j++)
+			for (j = 1; j <= numLine; j++)
 			{
 				System.out.print(j + " ");	
-			}
-			k = k + 2;
-			System.out.println(" ");
+			} //end for
+			
+			numLine--; //Decrement the number of elements for each line by 1
 		} //end for loop
 
 	} //end main
-
-	}
+} //end Problem5
