@@ -1,4 +1,4 @@
-package coreJavaAssignment; //Name of the package
+package assignment; //Name of the package
 
 public class Problem6 //Name of the class
 {
@@ -20,7 +20,7 @@ public class Problem6 //Name of the class
 				
 			} //end for
 			
-			System.out.println(); //
+			System.out.println(); //Move to the next line
 		} //end for loop
 
 	} //end main

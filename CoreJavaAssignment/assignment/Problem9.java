@@ -1,4 +1,4 @@
-package coreJavaAssignment; //Name of the package
+package assignment; //Name of the package
 
 import java.util.stream.IntStream; //Import stream from Java Library
 

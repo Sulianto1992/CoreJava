@@ -1,4 +1,4 @@
-package coreJavaAssignment; //Name of the package
+package assignment; //Name of the package
 
 public class Problem1 //Name of the class
 {
