@@ -3,7 +3,7 @@ package pojo; //Name of the package
 public class AccountInfo //Name of the class
 {
 	//Member declaration
-	private double balance;
+	private int balance;
 	
 	//Display zero dollars for new account users
 	public AccountInfo()
@@ -12,26 +12,26 @@ public class AccountInfo //Name of the class
 	} //end AccountInfo method
 	
 	//Return the current balance
-	public double getBalance()
+	public int getBalance()
 	{
 		return balance;
 	}
 	
 	//Setter method for deposit amount
-	public void depositAmount(double amount)
+	public void depositAmount(int amount)
 	{
 		balance = balance + amount;
 	} //end setDepositAmount method
 	
 	
 	//Getter method for checking the account balance
-	public double getAccountBalance()
+	public int getAccountBalance()
 	{
 		return balance;
 	} //end getAccountBalance method
 	
 	//Update the current balance
-	public boolean withdrawAmount(double amount)
+	public boolean withdrawAmount(int amount)
 	{
 		if (isEnoughWithdraw(amount))
 		{
@@ -45,7 +45,7 @@ public class AccountInfo //Name of the class
 	} //end withdrawAmount
 
 	//Determine whether it is enough amount to withdraw
-	public boolean isEnoughWithdraw(double amount) 
+	public boolean isEnoughWithdraw(int amount) 
 	{
 		if (balance > amount)
 		{

@@ -1,7 +1,7 @@
 package dao; //Name of the package
 
+//Import methods from classes and library
 import java.util.ArrayList;
-
 import pojo.User;
 import pojo.UserDetails;
 
@@ -79,4 +79,4 @@ public class ATMDAOImpl implements ATMDAO //Name of the class
 	    }//end for
 		return false;
 	} //end ATMDAOImpl
-}
+} //end ATMDAOImpl

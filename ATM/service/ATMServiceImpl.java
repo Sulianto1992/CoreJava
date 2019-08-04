@@ -1,5 +1,6 @@
 package service; //Name of the package
 
+//Import methods from classes and library
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import dao.ATMDAO;
@@ -15,8 +16,8 @@ public class ATMServiceImpl implements ATMService //Name of the class
 	String emailAddress, reply;
 	Scanner sc = new Scanner(System.in);
 	ATMDAO refATMDAO;		
-	int choice;
-	double amount;
+	int choice, amount;
+	
 	
 	//Default Constructor
 	public ATMServiceImpl() 
@@ -107,11 +108,11 @@ public class ATMServiceImpl implements ATMService //Name of the class
 	public void loginService()
 	{
 		//Prompt user for email address
-		System.out.println("\nEnter User ID: ");
+		System.out.print("Enter User ID: ");
 		emailAddress = sc.nextLine();
 		
 		//Prompt user for password
-		System.out.println("Password: ");
+		System.out.print("Password: ");
 		password = sc.nextLine();
 		
 		//Prompt the user for email address if the value is incorrect
@@ -146,7 +147,7 @@ public class ATMServiceImpl implements ATMService //Name of the class
 		} //end while
 		
 		//Display valid message
-		System.out.println("\nLogin Successful!!");
+		System.out.println("\nLogin Successful!!\n");
 	    
 		do
 		{
@@ -156,11 +157,11 @@ public class ATMServiceImpl implements ATMService //Name of the class
 			try 
 			{
 				//Prompt user to select one of the bank options
-				System.out.print("Enter Your Choice : " + choice);
-				int choice = sc.nextInt();
+				System.out.print("Enter Your Choice : ");
+				choice = sc.nextInt();
 	
 				//Prompt for user input should the number is out of the range
-				while ((choice < 1) | (choice > 3))
+				while ((choice < 1) | (choice > 4))
 				{
 					//Prompt for user input
 					System.out.println("Choice not available!!");
@@ -193,13 +194,13 @@ public class ATMServiceImpl implements ATMService //Name of the class
 			    		break;
 				case 3: withdrawAmount(currentUser);
 				        break;
+				case 4: System.out.println("Thanks for Banking with Us!!!");
+						break;
 			} //end switch
 			
-		}while((choice != 4) | (!(reply.equals("n"))));
+		}while((choice != 4));
 		
-		System.out.println("\nThanks for Banking with Us!!!");
-		
-	}
+	} //end loginService method
 
 	@Override
 	public void logout() 
@@ -225,54 +226,23 @@ public class ATMServiceImpl implements ATMService //Name of the class
 		System.out.println("Type 1: Check Available Bank Balance");
 		System.out.println("Type 2: Deposit Amount");
 		System.out.println("Type 3: Withdraw Amount");
+		System.out.println("Type 4: Exit the program");
 	} //end displayBankMenu
 
 	//Invoke method to check user's current balance
 	public void checkBalance(UserDetails currentUser)
 	{
 		//Display current balance
-		System.out.println("Available balance: $" + currentUser.getRefAccountInfo().getBalance());
-		
-		obtainReply();
-		
+		System.out.println("\nAvailable balance: $" + currentUser.getRefAccountInfo().getBalance());
+		System.out.println();
 	} //end checkBalance
-	
-	//Determine whether the user wishes to continue using bank options
-	public void obtainReply()
-	{
-		try
-		{
-			//Prompt user whether he or she wants to continue using bank menu options
-			System.out.print("Wish to continue? (y/n) : ");
-			reply = sc.nextLine();
-			
-			//Prompt the user for valid reply
-			while (!(reply.equals("y")) || !(reply.equals("n"))) 
-			{
-				System.out.println("\nInvalid value. Please enter the correct value.\n");
-				
-				//Prompt user whether he or she wants to continue using bank menu options
-				System.out.print("Wish to continue? (y/n) : ");
-				reply = sc.nextLine();
-			} //end while
-		}
-		catch (InputMismatchException e)
-		{
-			System.out.println("\nInvalid value. Please enter the correct value.\n");
-			
-			//Prompt user whether he or she wants to continue using bank menu options
-			System.out.print("Wish to continue? (y/n) : ");
-			reply = sc.nextLine();
-		} //end try catch
-		
-	} //end obtainReply method
 	
 	//Invoke method to deposit amount into the bank balance
 	public void depositAmount(UserDetails currentUser)
 	{
 		//Prompt user for the amount to be deposited
 		System.out.print("Enter Amount: ");
-		amount = sc.nextDouble();
+		amount = sc.nextInt();
 		
 		try
 		{
@@ -284,7 +254,7 @@ public class ATMServiceImpl implements ATMService //Name of the class
 				
 				//Prompt user for the amount to be deposited
 				System.out.print("Enter Amount: ");
-				amount = sc.nextDouble();
+				amount = sc.nextInt();
 			} //end while
 		}
 		catch (InputMismatchException e)
@@ -294,15 +264,13 @@ public class ATMServiceImpl implements ATMService //Name of the class
 			
 			//Prompt user for the amount to be deposited
 			System.out.print("Enter Amount: ");
-			amount = sc.nextDouble();
+			amount = sc.nextInt();
 		} //end try catch
 		
 		//Obtain and display new bank balance
 		currentUser.getRefAccountInfo().depositAmount(amount);
-		System.out.println(amount + "dollar deposited successfully!!");
-		
-		//Prompt user whether he or she wants to continue to use the banking options
-		obtainReply();
+		System.out.println();
+		System.out.println(amount + " dollar deposited successfully!!\n");
 		
 	} //end checkBalance
 
@@ -310,8 +278,8 @@ public class ATMServiceImpl implements ATMService //Name of the class
 	public void withdrawAmount(UserDetails currentUser) 
     {
 		//Prompt user for the amount to be withdrawn
-		System.out.println("Enter Amount: ");
-		amount = sc.nextDouble();
+		System.out.print("Enter Amount: ");
+		amount = sc.nextInt();
 		
 		try
 		{
@@ -323,7 +291,7 @@ public class ATMServiceImpl implements ATMService //Name of the class
 				
 				//Prompt user for the amount to be deposited
 				System.out.print("Enter Amount: ");
-				amount = sc.nextDouble();
+				amount = sc.nextInt();
 			} //end while
 		}
 		catch (InputMismatchException e)
@@ -333,7 +301,7 @@ public class ATMServiceImpl implements ATMService //Name of the class
 			
 			//Prompt user for the amount to be deposited
 			System.out.print("Enter Amount: ");
-			amount = sc.nextDouble();
+			amount = sc.nextInt();
 		} //end try catch
 		
 		// Determine whether the users has enough amount to withdraw from the bank balance
@@ -348,9 +316,6 @@ public class ATMServiceImpl implements ATMService //Name of the class
 			currentUser.getRefAccountInfo().withdrawAmount(amount);
 			System.out.println("Transaction Successful!!");
 		} //end if
-		
-		//Prompt user whether he or she wants to continue to use the banking options
-		obtainReply();
 		
 	} //end withdrawAmount
 	

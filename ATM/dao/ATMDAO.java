@@ -1,5 +1,6 @@
 package dao; //Name of the package
 
+//Import methods from classes and library
 import java.util.ArrayList;
 import pojo.User;
 import pojo.UserDetails;
@@ -12,5 +13,4 @@ public interface ATMDAO //Name of the interface
 	UserDetails getUser(String emailAddress);
 	boolean checkUserDetails(String emailAddress, String colour);
 	
-
 } //end ATMDAO
