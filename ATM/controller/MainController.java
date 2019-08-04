@@ -1,20 +1,16 @@
 package controller; //Name of the package
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import pojo.User;
 import service.ATMService;
 import service.ATMServiceImpl;
 
 public class MainController //Name of the class
 {
 	ATMService refATMService; //ATMService is an interface
-	User refUser; //User is a POJO (Plain old Java object)
 	
 	String reply; //Determine whether the user wants to continue to use the application
 	int choice; //Retrieve the user choice
-	ArrayList<User> userList = new ArrayList<User>(); //Create an object of ArrayList
 	
 	//Invoke method to display menu for the user
 	public void userMainController()
@@ -27,9 +23,6 @@ public class MainController //Name of the class
 	{
 		//Create object of ATMServiceImpl class and refer to the interface
 		refATMService = new ATMServiceImpl();
-		
-		//Create object of User class
-		User refUser = new User();
 		
 		//Display welcome message
 		System.out.println("Welcome to the ATM Application\n");
@@ -73,13 +66,13 @@ public class MainController //Name of the class
 			//Execute the statement based on the user choice
 			switch (choice)
 			{
-				case 1:  refATMService.registerUser(userList);
+				case 1:  refATMService.registerUser();
 					     break;
 					     
-				case 2:	 refATMService.loginService(userList);
+				case 2:	 refATMService.loginService();
 					     break;
 					     
-				case 3:  refATMService.forgetPassword(userList);
+				case 3:  refATMService.forgetPassword();
 				         break;
 					
 				case 4:  refATMService.logout();

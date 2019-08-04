@@ -4,7 +4,6 @@ public class AccountInfo //Name of the class
 {
 	//Member declaration
 	private double balance;
-	private double withdrawAmount;
 	
 	//Display zero dollars for new account users
 	public AccountInfo()
@@ -12,8 +11,14 @@ public class AccountInfo //Name of the class
 		balance = 0;
 	} //end AccountInfo method
 	
+	//Return the current balance
+	public double getBalance()
+	{
+		return balance;
+	}
+	
 	//Setter method for deposit amount
-	public void setDepositAmount(double amount)
+	public void depositAmount(double amount)
 	{
 		balance = balance + amount;
 	} //end setDepositAmount method
@@ -25,11 +30,32 @@ public class AccountInfo //Name of the class
 		return balance;
 	} //end getAccountBalance method
 	
-	
-	//Setter method for withdraw amount
-	public void setWithdrawAmount(double wthamt)
+	//Update the current balance
+	public boolean withdrawAmount(double amount)
 	{
-		this.withdrawAmount = wthamt;
-	}
+		if (isEnoughWithdraw(amount))
+		{
+			balance = balance - amount;
+			return true;
+		}
+		else
+		{
+			return false;
+		} //end if
+	} //end withdrawAmount
+
+	//Determine whether it is enough amount to withdraw
+	public boolean isEnoughWithdraw(double amount) 
+	{
+		if (balance > amount)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		} //end if
+		
+	} //end isEnoughWithdraw
 	
 } //end AccountInfo

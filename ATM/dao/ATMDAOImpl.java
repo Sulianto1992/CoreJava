@@ -1,34 +1,71 @@
 package dao; //Name of the package
 
 import java.util.ArrayList;
-import pojo.User;
+import pojo.UserDetails;
 
 public class ATMDAOImpl implements ATMDAO //Name of the class
 {
+	//Declare Arraylist
+	ArrayList <UserDetails> userList = new ArrayList<UserDetails>();
 	
 	//Determine whether the email address exists in ArrayList
 	@Override
-	public boolean registerValidate(ArrayList<User> refUserList, User ref)
+	public UserDetails checkEmailAddress(String emailAddress)
 	{
-		for (User refUser : refUserList) 
+		for (UserDetails user : userList) 
 		{
-			if (refUser.getEmailAddress().equals(ref.getEmailAddress()))
+			if (user.getRefUser().getEmailAddress().equals(emailAddress))
 			{
-				return true;
-			}		
-		}
-		return false;
-	}
-
+				return user;
+			} //end if 
+		} //end for
+		return null;
+	} //end checkEmailAddress method
+	
 	@Override
-	public boolean loginValidate(ArrayList<User> refUserList) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public void addUser(UserDetails refUser)
+	{
+		userList.add(refUser);
+	} //end checkEmailAddress method
 
+	
+	//Determine whether the email address and password are valid for login
+	@Override
+	public boolean isUserDataValid(String refUserID, String refPassword)
+	{
+		for (UserDetails user : userList) 
+		{
+			if (user.getRefUser().getEmailAddress().equals(refUserID))
+			{
+				if (user.getRefUser().getPassword().equals(refPassword))
+				{
+					return true;
+				} //end if
+			} //end if
+		} //end for
+		return false;
+	} //end isUserDataValid method
+
+	//Retrieve the user that is logged in
+	@Override
+	public UserDetails getUser(String emailAddress)
+	{
+		//Iterate through the list
+		for (UserDetails user : userList)
+		{
+			if (user.getRefUser().getEmailAddress().equals(emailAddress))
+			{
+				return user;
+			} //end if
+		} //end for
+		
+		return null;
+	} //end getUser method
+	/*
 	@Override
 	public boolean forgetPasswordValidate(ArrayList<User> refUserList) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	*/
 } //end ATMDAOImpl

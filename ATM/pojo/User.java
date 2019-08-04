@@ -7,6 +7,14 @@ public class User //Name of the class
 	private String password;
 	private String favouriteColour;
 	
+	//Default Constructor
+	public User()
+	{
+		emailAddress = "";
+		password = "";
+		favouriteColour = "";
+	}//end User method
+	
 	//Setters 
 	public void setEmailAddress(String email) 
 	{
