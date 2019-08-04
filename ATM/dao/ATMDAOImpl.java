@@ -1,15 +1,22 @@
 package dao; //Name of the package
 
 import java.util.ArrayList;
-
 import pojo.User;
 
 public class ATMDAOImpl implements ATMDAO //Name of the class
 {
 	
+	//Determine whether the email address exists in ArrayList
 	@Override
-	public boolean registerValidate(ArrayList<User> refUserList)
+	public boolean registerValidate(ArrayList<User> refUserList, User ref)
 	{
+		for (User refUser : refUserList) 
+		{
+			if (refUser.getEmailAddress().equals(ref.getEmailAddress()))
+			{
+				return true;
+			}		
+		}
 		return false;
 	}
 

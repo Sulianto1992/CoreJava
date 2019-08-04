@@ -9,7 +9,7 @@ public class ATMApp //Name of the class
 		//Create new object of MainController class
 		MainController refMainController = new MainController();
 		
-		//Call the method
+		//Invoke method
 		refMainController.userMainController();
 	} //end main
 

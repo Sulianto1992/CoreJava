@@ -1,6 +1,7 @@
 package controller; //Name of the package
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import pojo.User;
 import service.ATMService;
@@ -24,30 +25,50 @@ public class MainController //Name of the class
 	//Display menu
 	void mainMenu() 
 	{
+		//Create object of ATMServiceImpl class and refer to the interface
+		refATMService = new ATMServiceImpl();
+		
+		//Create object of User class
+		User refUser = new User();
+		
 		//Display welcome message
 		System.out.println("Welcome to the ATM Application\n");
 		System.out.println("Please select one of the options shown below\n");
 		
 		do
 		{
-			//Main page menu
-			System.out.println("User Home Page :");
-			System.out.println("1. Register");
-			System.out.println("2. Login");
-			System.out.println("3. Forget Password");
-			System.out.println("4. Logout (exit)\n");
+			//Display main menu
+			refATMService.displayMainMenu();
 			
-			//Prompt for user input
-			System.out.print("Enter Your Choice : ");
-			Scanner sc = new Scanner(System.in);
-			choice = sc.nextInt();
-			System.out.println(); 
-			
-			//Create object of ATMServiceImpl class and refer to the interface
-			refATMService = new ATMServiceImpl();
-			
-			//Create object of User class
-			User refUser = new User();
+			try 
+			{
+				//Prompt for user input
+				System.out.print("Enter Your Choice : ");
+				Scanner sc = new Scanner(System.in);
+				choice = sc.nextInt();
+				System.out.println(); 
+				
+				//Prompt for user input should the number is out of the range
+				while ((choice < 1) | (choice > 4))
+				{
+					//Prompt for user input
+					System.out.println("Invalid value. Please enter a correct value");
+					System.out.print("Enter Your Choice : ");
+					sc = new Scanner(System.in);
+					choice = sc.nextInt();
+					System.out.println(); 
+				} //end while
+			} 
+			catch (InputMismatchException e) //Detect for any other input characters
+			{
+				//Prompt for user input
+				System.out.println("Invalid value. Please enter a correct value");
+				System.out.print("Enter Your Choice : ");
+				Scanner sc = new Scanner(System.in);
+				choice = sc.nextInt();
+				System.out.println(); 
+				
+			} //end try catch
 			
 			//Execute the statement based on the user choice
 			switch (choice)
