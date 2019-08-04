@@ -353,11 +353,94 @@ public class ATMServiceImpl implements ATMService //Name of the class
 		obtainReply();
 		
 	} //end withdrawAmount
-	@Override
-	public void forgetPassword() {
-		// TODO Auto-generated method stub
+	
+	//Invoke method to reset the user's password
+	public void forgetPassword() 
+	{
+		//Prompt user for user ID and security key
+		System.out.println("Enter Your ID : ");
+		emailAddress = sc.nextLine();
 		
-	}
+		System.out.println("Enter security key: ");
+		colour = sc.nextLine();
+		
+		//Prompt the user for email address if the value is incorrect
+		while (!(emailAddress.matches(regex)))
+		{
+			//Prompt for user details
+			System.out.print("Incorrect email address. Please enter the correct value.\n");
+			System.out.print("Enter email address : ");
+			emailAddress = sc.nextLine();
+		} //end while
+		
+		//Prompt the user for email address if the value is incorrect
+		while (!(colour.matches(charOnly)))
+		{
+			//Prompt for user details
+			System.out.print("Invalid value. Please enter the correct value.\n");
+			System.out.print("What is your favourite colour ?");
+			colour = sc.nextLine();
+		} //end while
+		
+		//Determine whether his or her userID and security key are valid
+		if (refATMDAO.checkUserDetails(emailAddress, colour) == false)
+		{
+			//Display invalid message
+			System.out.println("Invalid user credentials.");
+		} 
+		else
+		{
+			//Prompt the user for new password
+			System.out.println("\nEnter new password: ");
+			password = sc.nextLine();
+			System.out.println("Retype password : ");
+			secondPassword = sc.nextLine();
+			
+			//Execute this statement until both passwords matches
+			while (!(password.equals(secondPassword)))
+			{
+				System.out.println("Password doesn't match!!\n");
+				System.out.println("Please enter the password again");
+				
+				//Prompt user for his or her password
+				System.out.print("\nEnter Password: ");
+				password = sc.nextLine();
+				
+				//Prompt user to enter his or her password again
+				System.out.print("\nRe-type Password: ");
+				secondPassword = sc.nextLine();
+				System.out.println();
+				
+			} //end while
+			
+			//Prompt user for his or her favourite colour
+			System.out.print("\nWhat is your favourite colour ? ");
+			colour = sc.nextLine();
+			
+			//Prompt the user for email address if the value is incorrect
+			while (!(colour.matches(charOnly)))
+			{
+				//Prompt for user details
+				System.out.print("Invalid value. Please enter the correct value.\n");
+				System.out.print("What is your favourite colour ?");
+				colour = sc.nextLine();
+			} //end while
+				
+			//Set the new security key
+			refATMDAO.getUser(emailAddress).getRefUser().setFavouriteColour(colour);
+			
+			//Display answer for the security question
+			System.out.println(colour + " is your security key, incase if you forgot your password.\n");
+			
+			//Set the new password
+			refATMDAO.getUser(emailAddress).getRefUser().setPassword(password);
+			
+			//Display valid message
+			System.out.println("Your password has been reset successfully.");
+			
+		} //end if
+
+	} //end forgetPassword method
 	
 	
 } //end ATMServiceImpl

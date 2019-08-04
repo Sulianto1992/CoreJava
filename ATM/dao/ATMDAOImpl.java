@@ -1,6 +1,8 @@
 package dao; //Name of the package
 
 import java.util.ArrayList;
+
+import pojo.User;
 import pojo.UserDetails;
 
 public class ATMDAOImpl implements ATMDAO //Name of the class
@@ -61,11 +63,20 @@ public class ATMDAOImpl implements ATMDAO //Name of the class
 		
 		return null;
 	} //end getUser method
-	/*
+	
 	@Override
-	public boolean forgetPasswordValidate(ArrayList<User> refUserList) {
-		// TODO Auto-generated method stub
+	public boolean checkUserDetails(String emailAddress, String colour)
+	{
+		for (UserDetails user : userList) 
+		{
+			if (user.getRefUser().getEmailAddress().equals(emailAddress))
+			{
+				if (user.getRefUser().getFavouriteColour().equals(colour))
+				{
+					return true;
+				} //end if 
+		    } //end if
+	    }//end for
 		return false;
-	}
-	*/
-} //end ATMDAOImpl
+	} //end ATMDAOImpl
+}
