@@ -1,8 +1,9 @@
-package coreJavaAssignment;
+package assignment; //Name of the package
 
-public class Problem12 {
-
-	public static void main(String[] args) {
+public class Problem12 //Name of the class
+{
+	public static void main(String[] args) //Start of the program 
+	{
 		
        //Array initialization
 	   int array[] = {1, 4, 5, 7, 9};
@@ -11,7 +12,10 @@ public class Problem12 {
 	   int smallest = array[0];
 	   int secondSmallest = array[0];
 	   
-	   //For loop to determine largest and second largest element
+	   //Display the elements of the array
+	   System.out.println("Array: 1, 4, 5, 7, 9");
+	   
+	   //Execute this statement as long as it is true
 	   for (int i = 0; i < array.length; i++)
 	   {
 		   if (array[i] > largest) 
@@ -22,10 +26,11 @@ public class Problem12 {
 		   else if (array[i] > secondLargest)
 		   {
 			   secondLargest = array[i];
-		   }
-       } //end for loop
+		   } //end if 
+		   
+       } //end for 
 	   
-	   //for loop to determine smallest and second smallest element
+	   //Execute this statement as long as it is true
 	   for (int j = 0; j < array.length; j++)
 	   {
 		   if (array[j] < smallest)
@@ -36,8 +41,9 @@ public class Problem12 {
 		   else if ((array[j] < secondSmallest && (array[j] != smallest)) || (smallest == secondSmallest))
 		   {
 			   secondSmallest = array[j];
-		   }   
-      } //end for loop
+		   } //end if
+		   
+      } //end for
 	   
 	   //Display second largest and second smallest element in the array
 	   System.out.println("The second largest number is " + secondLargest);
@@ -45,4 +51,4 @@ public class Problem12 {
 		
 	} //end main
 
-} //end class
+} //end Problem2
