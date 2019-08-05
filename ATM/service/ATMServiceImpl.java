@@ -190,14 +190,14 @@ public class ATMServiceImpl implements ATMService //Name of the class
 			//Execute the statement based on the user choice
 			switch(choice)
 			{
-				case 1: checkBalance(currentUser);
-					    break;
-				case 2: depositAmount(currentUser);
-			    		break;
-				case 3: withdrawAmount(currentUser);
-				        break;
-				case 4: System.out.println("Thanks for Banking with Us!!!");
-						break;
+				case 1:  checkBalance(currentUser);
+					     break;
+				case 2:  depositAmount(currentUser);
+			    		 break;
+				case 3:  withdrawAmount(currentUser);
+				         break;
+				default: System.out.println("Thanks for Banking with Us!!!\n");
+						 break;
 			} //end switch
 			
 		}while((choice != 4));
@@ -228,7 +228,6 @@ public class ATMServiceImpl implements ATMService //Name of the class
 		System.out.println("Type 1: Check Available Bank Balance");
 		System.out.println("Type 2: Deposit Amount");
 		System.out.println("Type 3: Withdraw Amount");
-		System.out.println("Type 4: Exit the program");
 	} //end displayBankMenu
 
 	//Invoke method to check user's current balance
